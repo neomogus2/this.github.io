@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Neo Mamaril"/>
+<meta name="keywords" content="Sussy"/>
+<meta name="revised" content=""/>
+<link rel="icon" href=""/>
+<link rel="stylesheet" href="revamp_homebar-modeswitch.css">
+<title> za warudo </title>
+<style>
+
+a {
+  text-decoration: none;
+}
+  
+.toggle {
+  position: relative;
+}
+
+
+.toggle input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle .onoff {
+  display: block;
+  font-family: monospace;
+  margin-right:10px;
+  margin-bottom:3px;
+  z-index: 3;
+  float:right;
+  clear:right;
+}
+
+.slider {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 30px;
+  height: 17px;
+  float:right;
+  margin-right: 10px;
+  z-index: 3;
+}
+
+.slider:before {
+  position:absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #121212;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*dark mode*/
+.darkmode {
+  background-color: #434343;
+  color: white;
+}
+
+/*home bar*/
+nav {
+  list-style-type:none;
+  margin:10px;
+  padding:0;
+  overflow:hidden;
+  width: 100%;
+  height:auto;
+}
+
+nav {
+  font-family: Arial, sans;
+  font-size: 15px;
+}
+
+nav a {
+  background-color:#EDEDED;
+  text-decoration:none;
+  color: gray;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a:active {
+  color: #787878;
+}
+/* darkmode stuffs */
+
+.darkmode nav {
+  list-style-type:none;
+  margin:10px;
+  padding:0;
+  overflow:hidden;
+  width:100%;
+  height:auto;
+}
+
+.darkmode nav {
+  display:inline;
+  font-family: Arial, sans;
+  font-size: 15px;
+  overflow:hidden;
+  text-align:center;
+}
+
+.darkmode nav a {
+  background-color:#343434;
+  text-decoration:none;
+  color: #CDCDCD;
+}
+
+.darkmode nav a:hover {
+  color:white;
+}
+
+.darkmode nav a:active {
+  color:#787878;
+}
+
+header {
+  font-family: arial, sans;
+  margin: 10px;
+}
+
+section {
+  margin-left: 10px;
+  font-family: Helvetica, sans;
+  background-color: #CECECE;
+}
+
+.darkmode section {
+  background-color: #212121;
+}
+
+.intro {
+  width: 60%;
+  margin-left: 10px;
+}
+
+div p {
+  font-family: arial, sans;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1> ZA WARUDO: toki wo tomare  </h1>
+</header>
+
+<nav>
+  <a href="#home"> | HOME | </a>
+  <a href="#notes"> | NOTES | </a>
+  <a href="#references"> | REFERENCES | </a>
+  <a href="#updates"> | UPDATES | </a>
+  <a></a>
+</nav>
+
+<div class="intro">
+  <p> Earth. The home of over 7 billion people, the cradle of civilization
+    has been here since a long time ago.  Here is a short summary by Bill Wurtz of what 
+    happened from the creation of the floating rock we live in, 'til now. (volume warning)</p>
+  
+  <iframe width="100%" height="300px" 
+  src="https://www.youtube.com/embed/iEO6mD2xpAY?autoplay=1&mute=0" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+  </iframe>
+  
+  <p> You just watched a 13 minute oversimplification of what happened in the last few billion 
+    years, full credits go to Bill Wurtz, here is a
+    <a href="https://www.youtube.com/user/billwurtz">link</a>
+    to his Youtube Channel </p>
+</div>
+<section>
+  <p> 
+    Now that you are well-versed about the history of our world,
+    we should look at it now. Very advanced, very automated, some may say.
+    We are veering towards a more advanced, decentralized society, which will lead to 
+    a much more peaceful world. But, if we could just... pause time, even just for a day, we can
+    see the situation the world is in right now, and in what ways it is suffering.
+
+  </p>
+  <p>
+    first off, lets head off to the 
+    <a href="">Arctic</a>
+    , so make sure to bring your thick jacket.
+  </p>
+
+</section>
+
+ 
+<hr>
+<label class="toggle">
+  <span class="onoff"> Light Mode </span>
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+
+
+
+
+<script>
+  const toggle = document.querySelector('.toggle input')
+
+  toggle.addEventListener('click',() => {
+    const onOff = toggle.parentNode.querySelector('.onoff')
+    onOff.textContent = toggle.checked ? 'Dark Mode' : 'Light Mode'
+
+    var element = document.body;
+    element.classList.toggle('darkmode')
+  })
+
+</script>
+</body>
+</html> 
